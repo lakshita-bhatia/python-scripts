@@ -1,5 +1,5 @@
 # python-scripts
-### Programs implementing important daily life applications like:
+### Programs implementing important applications like:
 
 * Crypto-Analysis
 * Hashing
