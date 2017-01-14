@@ -1,7 +1,6 @@
 #########################################################################
 #                 10-row School abacus
-#                         by
-#                      Michael H
+#                        
 #########################################################################
 #       Description partially extracted from from wikipedia
 #
@@ -28,39 +27,34 @@
 # bottom, ascending up to x1000000000 at the top row.
 ######################################################################
 
-# TASK:
 # The procedure print_abacus(integer) takes a positive integer
 # and prints a visual representation (image) of an abacus setup for a
 # given positive integer value.
-#
-# Ranking
-# 1 STAR: solved the problem!
-# 2 STARS: 6 < lines <= 9
-# 3 STARS: 3 < lines <= 6
-# 4 STARS: 0 < lines <= 3
 
+#SOLUTION ONE
+#def print_abacus(value):
+#    lo = []
+#    if value == 0:
+#        print('|00000*****   |\n'*10)
+#    else:
+#        g = len(str(value))
+#        while value >= 1:
+#            p = '|00000*****|'
+#            i = 11
+#            k = value%10
+#            lo.append(p[:i-k]+" "*3+p[i-k:])
+#            value = value / 10
+#        print('|00000*****   |\n'*(10-g)),
+#        while g > 0:
+#            print lo.pop()
+#            g-=1
+
+
+#SOLUTION TWO
 def print_abacus(value):
-    lo = []
-    if value == 0:
-        print('|00000*****   |\n'*10)
-    else:
-        g = len(str(value))
-        while value >= 1:
-            p = '|00000*****|'
-            i = 11
-            k = value%10
-            lo.append(p[:i-k]+" "*3+p[i-k:])
-            value = value / 10
-        print('|00000*****   |\n'*(10-g)),
-        while g > 0:
-            print lo.pop()
-            g-=1
-
-
-
-       #
-       ### Add you code here
-       #
+    arr = ['|00000*****   |','|00000****   *|','|00000***   **|','|00000**   ***|','|00000*   ****|','|00000   *****|','|0000   0*****|','|000   00*****|','|00   000*****|','|0   0000*****|']
+    s = '0'*(10-len(str(value)))+str(value)
+    print "\n".join([arr[int(i)] for i in s])
 
 ###  TEST CASES
 print "Abacus showing 0:"
